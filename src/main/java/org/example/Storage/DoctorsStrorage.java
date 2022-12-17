@@ -13,7 +13,7 @@ public class DoctorsStrorage {
     public  List<Doctor> getDoctors() {
         return Collections.unmodifiableList(doctors);
     }
-    private static DoctorsStrorage doctorsStrorage=new DoctorsStrorage();
+    private static final DoctorsStrorage doctorsStrorage=new DoctorsStrorage();
 
     static {
 
@@ -53,9 +53,26 @@ public class DoctorsStrorage {
     }
 
 
-    public static void spezialization()
+    public static List<String> spezialization()
     {
-        doctors.forEach(e-> System.out.println(e.getSpezialization()));
+
+        Set<String> stringSet=new HashSet<>();
+
+        doctors.forEach(e->stringSet.add(e.getSpezialization()));
+
+
+        return new ArrayList<>(stringSet);
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

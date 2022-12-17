@@ -21,6 +21,8 @@ public class AdvertisementStorage extends Thread
                 Thread.sleep(10000);
 
                 ConsoleHelper.Print("Скидка");
+
+
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -31,7 +33,7 @@ public class AdvertisementStorage extends Thread
 
     public static AdvertisementStorage getInstance()
     {
-        advertisementStorage.start();
+
         return advertisementStorage;
 
     }

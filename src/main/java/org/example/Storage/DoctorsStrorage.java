@@ -53,6 +53,15 @@ public class DoctorsStrorage {
     }
 
 
+    public static void spezialization()
+    {
+        doctors.forEach(e-> System.out.println(e.getSpezialization()));
+
+
+    }
+
+
+
 
 
 

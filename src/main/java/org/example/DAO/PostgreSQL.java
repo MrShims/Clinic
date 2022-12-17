@@ -1,8 +1,6 @@
 package org.example.DAO;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class PostgreSQL {
 
@@ -37,6 +35,36 @@ public class PostgreSQL {
 
 
     }
+
+
+    public static ResultSet ShowCardPatient(int id)
+
+    {
+
+        String SQL= "SELECT fio_doctor,specialization,daterep,textrep from note,doctor where id_doctor=note.id_doctor_note and id_cart_note="+id;
+
+        try {
+            Statement statement= connection.createStatement();
+
+            return statement.executeQuery(SQL);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

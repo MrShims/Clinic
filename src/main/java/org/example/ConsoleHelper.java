@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.DAO.PostgreSQL;
 import org.example.Person.Patient;
+import org.example.advertisement.AdvertisementStorage;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,6 +21,8 @@ public class ConsoleHelper {
     public static void Start() {
 
         String input = null;
+
+        AdvertisementStorage.getInstance();
 
         do {
 
@@ -113,7 +116,7 @@ public class ConsoleHelper {
                         Date date = resultSet.getDate("birthday");
                         String email = resultSet.getString("email");
                         Patient patient = new Patient(id ,fio_patient, telephone, date, email);
-                        System.out.println(patient.toString());
+                        new PatientAccount(patient).init();
                     }
                 } catch (SQLException e) {
                     throw new RuntimeException(e);

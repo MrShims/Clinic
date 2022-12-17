@@ -7,6 +7,22 @@ public class Doctor {
     private String telephone;
     private String spezialization;
 
+    public int getId() {
+        return id;
+    }
+
+    public String getFio() {
+        return fio;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public String getSpezialization() {
+        return spezialization;
+    }
+
     public Doctor(int id, String fio, String telephone, String spezialization) {
         this.id = id;
         this.fio = fio;
